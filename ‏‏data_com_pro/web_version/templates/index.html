@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Data Communication Project</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+
+<body class="bg-light">
+
+  <div class="container p-5">
+    <h2 class="text-center mb-4">Smart Error Detection System</h2>
+
+    <form method="post">
+      <div class="mb-3">
+        <label>Enter your message:</label>
+        <input type="text" name="data" class="form-control" required>
+      </div>
+
+      <label>Select Method:</label>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="method" value="PARITY" required>
+        <label class="form-check-label">Parity Bit</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="method" value="CRC">
+        <label class="form-check-label">CRC</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="method" value="HAMMING">
+        <label class="form-check-label">Hamming Code</label>
+      </div>
+
+      <label class="mt-3">Select Error Type:</label>
+      
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="error" value="none" checked>
+        <label class="form-check-label">No Error</label>
+      </div>
+      
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="error" value="bit_flip">
+        <label class="form-check-label">Bit Flip</label>
+      </div>
+      
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="error" value="substitution">
+        <label class="form-check-label">Character Substitution</label>
+      </div>
+      
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="error" value="deletion">
+        <label class="form-check-label">Character Deletion</label>
+      </div>
+      
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="error" value="insertion">
+        <label class="form-check-label">Character Insertion</label>
+      </div>
+      
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="error" value="burst">
+        <label class="form-check-label">Burst Error</label>
+      </div>
+      
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="error" value="random">
+        <label class="form-check-label">Random Error</label>
+      </div>
+
+
+      <button class="btn btn-primary mt-3">Send</button>
+    </form>
+
+    {% if original %}
+    <div class="card mt-4 p-3">
+      <h4>Results</h4>
+      <p><strong>Original Data:</strong> {{ original }}</p>
+      <p><strong>Corrupted Data:</strong> {{ corrupted }}</p>
+      <p><strong>Method:</strong> {{ method }}</p>
+      <p><strong>Control Bits:</strong> {{ control }}</p>
+
+      {% if corrected != "-" %}
+      <p><strong>Corrected Data:</strong> {{ corrected }}</p>
+      {% endif %}
+
+      <h4>Status:
+        {% if status == "CORRECT" %}
+        <span class="text-success">DATA CORRECT ✔️</span>
+        {% else %}
+        <span class="text-danger">DATA CORRUPTED ❌</span>
+        {% endif %}
+      </h4>
+    </div>
+    {% endif %}
+  </div>
+
+</body>
+
+</html>
