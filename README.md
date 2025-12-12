@@ -7,13 +7,13 @@ This project demonstrates **Parity Bit**, **CRC**, and **Hamming Code** with mul
 
 ## 🖼️ System Preview
 
-### **Home Page**
+### **Home Page**s
 
-![Home Page](images/main_page.png)
+![Home Page](‏‏data_com_pro/web_version/images/main_page.png)
 
 ### **Results Section Example**
 
-![Results Section](images/results_example.png)
+![Results Section](‏‏data_com_pro/web_version/images/results_example.png)
 
 ---
 
