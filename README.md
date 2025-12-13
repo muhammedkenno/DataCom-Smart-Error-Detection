@@ -1,7 +1,7 @@
 # Smart Error Detection System – Web Interface
 
 A modern web-based implementation of data communication error detection and correction techniques.  
-This project demonstrates **Parity Bit**, **CRC**, and **Hamming Code** with multiple error injection methods — all through a clean and simple web UI.
+This project demonstrates **Parity Bit**, **CRC**, and **Hamming Code** with multiple error injection methods — all through a clean and simple web UI .
 
 ---
 
